@@ -150,7 +150,7 @@ export default function AboutPage() {
               <AnimatedSection key={item.title} delay={i * 0.1}>
                 <motion.div
                   whileHover={{ y: -8 }}
-                  className="text-center p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-red-primary/30 transition-all"
+                  className="h-full text-center p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-red-primary/30 transition-all flex flex-col items-center"
                 >
                   <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-red-primary to-red-dark flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-5">
                     <item.icon className="text-sm sm:text-base md:text-xl text-white" />
