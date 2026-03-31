@@ -98,7 +98,7 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-14 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(79,195,247,0.12),_transparent_50%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -111,7 +111,7 @@ export default function BlogPage() {
               Blog & Tips
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6">
-              Auto Care <span className="gradient-text-blue">Insights</span>
+              Pure Care <span className="gradient-text-blue">Insights</span>
             </h1>
             <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-2">
               Expert tips, guides, and insights to help you make the best decisions
@@ -162,9 +162,9 @@ export default function BlogPage() {
 
       {/* Blog Detail Sections */}
       <section className="py-8 sm:py-12 md:py-16">
-        <div className="section-divider mb-8 sm:mb-12 md:mb-16" />
+        <div className="section-divider mb-6 sm:mb-8 md:mb-10" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
+          <AnimatedSection className="text-center mb-6 sm:mb-8 md:mb-10">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
               Featured <span className="gradient-text-blue">Articles</span>
             </h2>

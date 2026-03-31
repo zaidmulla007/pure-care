@@ -24,6 +24,8 @@ const contactInfo = [
     details: ["+971 58 636 8849", "+971 52 948 8821"],
     link: "tel:+971586368849",
     color: "from-blue-primary to-blue-dark",
+    hoverBorder: "hover:border-blue-primary/40",
+    hoverText: "group-hover:text-blue-primary",
   },
   {
     icon: FaWhatsapp,
@@ -31,6 +33,8 @@ const contactInfo = [
     details: ["+971 58 636 8849"],
     link: "https://wa.me/971586368849",
     color: "from-green-500 to-green-600",
+    hoverBorder: "hover:border-green-500/40",
+    hoverText: "group-hover:text-green-400",
   },
   {
     icon: FaEnvelope,
@@ -38,6 +42,8 @@ const contactInfo = [
     details: ["purecareautoacs@gmail.com"],
     link: "mailto:purecareautoacs@gmail.com",
     color: "from-red-primary to-red-dark",
+    hoverBorder: "hover:border-red-primary/40",
+    hoverText: "group-hover:text-red-primary",
   },
   {
     icon: FaMapMarkerAlt,
@@ -45,6 +51,8 @@ const contactInfo = [
     details: ["6 Sheikh Sultan, Bin Saqr", "Al Qasimi St, Sharjah"],
     link: "https://maps.google.com/?q=6+Sheikh+Sultan+Bin+Saqr+Al+Qasimi+Street+Sharjah+UAE",
     color: "from-amber-500 to-amber-700",
+    hoverBorder: "hover:border-amber-500/40",
+    hoverText: "group-hover:text-amber-400",
   },
 ];
 
@@ -74,7 +82,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-14 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(79,195,247,0.12),_transparent_50%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -108,12 +116,12 @@ export default function ContactPage() {
                   target={info.title === "WhatsApp" || info.title === "Location" ? "_blank" : undefined}
                   rel="noopener noreferrer"
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className="h-full flex flex-col items-center justify-center p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/30 transition-all text-center group min-h-[160px] sm:min-h-[180px] md:min-h-[200px]"
+                  className={`h-full flex flex-col items-center justify-center p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.06] ${info.hoverBorder} transition-all text-center group min-h-[160px] sm:min-h-[180px] md:min-h-[200px]`}
                 >
                   <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br ${info.color} flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4`}>
                     <info.icon className="text-base sm:text-lg md:text-xl text-white" />
                   </div>
-                  <h3 className="text-white font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2">{info.title}</h3>
+                  <h3 className={`text-white font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2 ${info.hoverText} transition-colors`}>{info.title}</h3>
                   {info.details.map((detail) => (
                     <p key={detail} className="text-gray-400 text-[10px] sm:text-xs md:text-sm break-all sm:break-normal">
                       {detail}

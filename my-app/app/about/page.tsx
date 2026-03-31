@@ -14,6 +14,8 @@ import {
   FaAward,
   FaHeart,
   FaClock,
+  FaUser,
+  FaHeadset,
 } from "react-icons/fa";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -33,16 +35,16 @@ const timeline = [
 ];
 
 const team = [
-  { name: "Siyad Abdulla", role: "Founder & CEO", desc: "Visionary leader with 10+ years of experience in the auto care industry." },
-  { name: "Expert Technicians", role: "Service Team", desc: "Skilled professionals trained in the latest car care techniques and technologies." },
-  { name: "Customer Support", role: "Support Team", desc: "Dedicated team ensuring seamless customer experience from inquiry to delivery." },
+  { name: "Siyad Abdulla", role: "Founder & CEO", desc: "Visionary leader with 10+ years of experience in the auto care industry.", icon: FaUser },
+  { name: "Expert Technicians", role: "Service Team", desc: "Skilled professionals trained in the latest car care techniques and technologies.", icon: FaUsers },
+  { name: "Customer Support", role: "Support Team", desc: "Dedicated team ensuring seamless customer experience from inquiry to delivery.", icon: FaHeadset },
 ];
 
 export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-14 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(79,195,247,0.12),_transparent_50%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -67,7 +69,7 @@ export default function AboutPage() {
       </section>
 
       {/* Who We Are */}
-      <section className="py-12 sm:py-16 md:py-20">
+      <section className="py-8 sm:py-10 md:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <AnimatedSection direction="left">
@@ -135,10 +137,10 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-12 sm:py-16 md:py-20">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-20" />
+      <section className="py-8 sm:py-10 md:py-14">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
+          <AnimatedSection className="text-center mb-6 sm:mb-8 md:mb-10">
             <span className="text-red-primary text-xs sm:text-sm font-semibold tracking-widest uppercase">Our Values</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mt-2 sm:mt-3 mb-3 sm:mb-4">
               What <span className="gradient-text-red">Drives Us</span>
@@ -165,10 +167,10 @@ export default function AboutPage() {
       </section>
 
       {/* Journey Timeline */}
-      <section className="py-12 sm:py-16 md:py-20">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-20" />
+      <section className="py-8 sm:py-10 md:py-14">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
+          <AnimatedSection className="text-center mb-6 sm:mb-8 md:mb-10">
             <span className="text-blue-primary text-xs sm:text-sm font-semibold tracking-widest uppercase">Our Journey</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mt-2 sm:mt-3 mb-3 sm:mb-4">
               The <span className="gradient-text-blue">Timeline</span>
@@ -205,10 +207,10 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-12 sm:py-16 md:py-20">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-20" />
+      <section className="py-8 sm:py-10 md:py-14">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
+          <AnimatedSection className="text-center mb-6 sm:mb-8 md:mb-10">
             <span className="text-blue-primary text-xs sm:text-sm font-semibold tracking-widest uppercase">Our Team</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mt-2 sm:mt-3 mb-3 sm:mb-4">
               Meet The <span className="gradient-text">Experts</span>
@@ -223,7 +225,7 @@ export default function AboutPage() {
                   className="text-center p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/30 transition-all"
                 >
                   <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-blue-primary to-blue-dark flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-5">
-                    <FaUsers className="text-xl sm:text-2xl md:text-3xl text-white" />
+                    <member.icon className="text-xl sm:text-2xl md:text-3xl text-white" />
                   </div>
                   <h3 className="text-white font-bold text-base sm:text-lg md:text-xl mb-0.5 sm:mb-1">{member.name}</h3>
                   <span className="text-blue-primary text-xs sm:text-sm font-medium">{member.role}</span>
@@ -236,8 +238,8 @@ export default function AboutPage() {
       </section>
 
       {/* Contact Banner */}
-      <section className="py-12 sm:py-16 md:py-20">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-20" />
+      <section className="py-8 sm:py-10 md:py-14">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4 sm:mb-6">Visit Our Showroom</h2>

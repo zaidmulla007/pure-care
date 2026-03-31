@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaCar, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaInstagram, FaFacebookF, FaTiktok } from "react-icons/fa";
+import { FaCar, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaInstagram, FaFacebookF, FaTiktok, FaYoutube, FaLinkedinIn } from "react-icons/fa";
 
 const services = [
   "Car Tinting",
@@ -50,6 +50,8 @@ export default function Footer() {
                 { icon: FaWhatsapp, href: "https://wa.me/971586368849" },
                 { icon: FaInstagram, href: "https://www.instagram.com" },
                 { icon: FaFacebookF, href: "https://www.facebook.com" },
+                { icon: FaYoutube, href: "https://www.youtube.com" },
+                { icon: FaLinkedinIn, href: "https://www.linkedin.com" },
                 { icon: FaTiktok, href: "https://www.tiktok.com" },
               ].map(({ icon: Icon, href }, i) => (
                 <motion.a
@@ -58,9 +60,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -2 }}
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-blue-primary hover:border-blue-primary/50 transition-colors"
+                  className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-blue-primary hover:border-blue-primary/50 transition-colors"
                 >
-                  <Icon />
+                  <Icon className="text-xs" />
                 </motion.a>
               ))}
             </div>

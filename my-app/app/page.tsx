@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import {
   FaCar,
@@ -27,18 +28,18 @@ import {
 import AnimatedSection from "@/components/AnimatedSection";
 
 const services = [
-  { icon: FaCar, title: "Car Tinting", desc: "Premium window tinting for UV protection and privacy with top-grade films." },
-  { icon: MdColorLens, title: "Wrapping", desc: "Full body vinyl wraps in any color or finish to transform your vehicle's look." },
-  { icon: MdLocalCarWash, title: "Car Polish", desc: "Professional polishing to restore your car's showroom shine and remove scratches." },
-  { icon: FaShieldAlt, title: "PPF", desc: "Paint Protection Film to guard against chips, scratches and road debris." },
-  { icon: FaStar, title: "Ceramic Coating", desc: "Long-lasting ceramic protection for unmatched gloss and hydrophobic finish." },
-  { icon: MdDirectionsCar, title: "Car Detailing", desc: "Complete interior and exterior detailing for a brand-new feel." },
-  { icon: MdBuild, title: "Carpet Flooring", desc: "Custom 3D/5D carpet flooring for perfect fit and premium interior look." },
-  { icon: FaTools, title: "Car Accessories", desc: "Wide range of premium car accessories to upgrade your vehicle." },
-  { icon: FaCar, title: "Seat Covers", desc: "Custom upholstery and seat covers for comfort and style." },
-  { icon: MdBuild, title: "Ceiling", desc: "Professional car ceiling repair and customization services." },
-  { icon: FaShieldAlt, title: "Graphene Coating", desc: "Next-gen graphene coating for superior durability and protection." },
-  { icon: MdColorLens, title: "Plastic Flooring", desc: "Durable plastic flooring solutions for heavy-duty vehicle protection." },
+  { icon: FaCar, title: "Car Tinting", desc: "Premium window tinting for UV protection and privacy with top-grade films.", image: "/services/Car-Tinting.jpg" },
+  { icon: MdColorLens, title: "Wrapping", desc: "Full body vinyl wraps in any color or finish to transform your vehicle's look.", image: "/services/Wrapping.jpg" },
+  { icon: MdLocalCarWash, title: "Car Polish", desc: "Professional polishing to restore your car's showroom shine and remove scratches.", image: "/services/Car-Polish.jpg" },
+  { icon: FaShieldAlt, title: "PPF", desc: "Paint Protection Film to guard against chips, scratches and road debris.", image: "/services/PPF-CAR.jpg" },
+  { icon: FaStar, title: "Ceramic Coating", desc: "Long-lasting ceramic protection for unmatched gloss and hydrophobic finish.", image: "/services/Ceramic-Coating.jpg" },
+  { icon: MdDirectionsCar, title: "Car Detailing", desc: "Complete interior and exterior detailing for a brand-new feel.", image: "/services/Car-Detailing.jpg" },
+  { icon: MdBuild, title: "Carpet Flooring", desc: "Custom 3D/5D carpet flooring for perfect fit and premium interior look.", image: "/services/Carpet-Flooring.jpg" },
+  { icon: FaTools, title: "Car Accessories", desc: "Wide range of premium car accessories to upgrade your vehicle.", image: "/services/Car-Accessories.png" },
+  { icon: FaCar, title: "Seat Covers", desc: "Custom upholstery and seat covers for comfort and style.", image: "/services/Seat-Covers.jpg" },
+  { icon: MdBuild, title: "Ceiling", desc: "Professional car ceiling repair and customization services.", image: "/services/Ceiling.jpg" },
+  { icon: FaShieldAlt, title: "Graphene Coating", desc: "Next-gen graphene coating for superior durability and protection.", image: "/services/Graphene-Coating.jpg" },
+  { icon: MdColorLens, title: "Plastic Flooring", desc: "Durable plastic flooring solutions for heavy-duty vehicle protection.", image: "/services/Plastic-Flooring.jpg" },
 ];
 
 const stats = [
@@ -54,6 +55,8 @@ const featuredProducts = [
     icon: FaStar,
     items: ["Gtechniq Crystal Serum", "Ceramic Pro 9H", "IGL Coatings Kenzo"],
     color: "from-red-primary to-red-dark",
+    hoverBorder: "hover:border-red-primary/40",
+    hoverText: "group-hover:text-red-primary",
     price: "From AED 1,500",
   },
   {
@@ -61,6 +64,8 @@ const featuredProducts = [
     icon: FaShieldAlt,
     items: ["XPEL Ultimate Plus", "3M Scotchgard Pro", "SunTek Ultra PPF"],
     color: "from-emerald-500 to-emerald-700",
+    hoverBorder: "hover:border-emerald-500/40",
+    hoverText: "group-hover:text-emerald-400",
     price: "From AED 3,000",
   },
   {
@@ -68,6 +73,8 @@ const featuredProducts = [
     icon: MdColorLens,
     items: ["3M 2080 Series", "Avery Dennison Supreme", "Chrome & Special Effects"],
     color: "from-purple-500 to-purple-700",
+    hoverBorder: "hover:border-purple-500/40",
+    hoverText: "group-hover:text-purple-400",
     price: "From AED 2,500",
   },
   {
@@ -75,6 +82,8 @@ const featuredProducts = [
     icon: MdLayers,
     items: ["3M Crystalline Series", "Llumar CTX Series", "SunTek CXP Carbon"],
     color: "from-blue-primary to-blue-dark",
+    hoverBorder: "hover:border-blue-primary/40",
+    hoverText: "group-hover:text-blue-primary",
     price: "From AED 450",
   },
   {
@@ -82,6 +91,8 @@ const featuredProducts = [
     icon: MdWeekend,
     items: ["Custom Seat Covers", "3D/5D Floor Mats", "Ambient Lighting Kits"],
     color: "from-amber-500 to-amber-700",
+    hoverBorder: "hover:border-amber-500/40",
+    hoverText: "group-hover:text-amber-400",
     price: "From AED 50",
   },
   {
@@ -89,6 +100,8 @@ const featuredProducts = [
     icon: MdLocalCarWash,
     items: ["Meguiar's Professional", "Chemical Guys Collection", "Sonax Professional"],
     color: "from-yellow-500 to-orange-500",
+    hoverBorder: "hover:border-yellow-500/40",
+    hoverText: "group-hover:text-yellow-400",
     price: "Various",
   },
 ];
@@ -145,7 +158,7 @@ export default function Home() {
             className="mb-4 sm:mb-6"
           >
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-blue-primary/10 border border-blue-primary/20 text-blue-primary text-xs sm:text-sm font-medium">
-              Sharjah&apos;s Premium Auto Care
+              Sharjah&apos;s Premium Pure Care
             </span>
           </motion.div>
 
@@ -232,8 +245,8 @@ export default function Home() {
       </section>
 
       {/* ===== 2. ABOUT PREVIEW ===== */}
-      <section className="py-12 sm:py-16 md:py-24 relative">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
+      <section className="py-8 sm:py-12 md:py-16 relative">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <AnimatedSection direction="left">
@@ -242,7 +255,7 @@ export default function Home() {
               </span>
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mt-2 sm:mt-3 mb-4 sm:mb-6">
                 Sharjah&apos;s Trusted{" "}
-                <span className="gradient-text-red">Auto Care</span> Experts
+                <span className="gradient-text-red">Pure Care</span> Experts
               </h2>
               <p className="text-gray-400 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
                 Pure Care Auto Accessories TR. L.L.C is a leading car care service
@@ -310,10 +323,10 @@ export default function Home() {
       </section>
 
       {/* ===== 3. SERVICES PREVIEW ===== */}
-      <section className="py-12 sm:py-16 md:py-24 relative">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
+      <section className="py-8 sm:py-12 md:py-16 relative">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
+          <AnimatedSection className="text-center mb-6 sm:mb-8 md:mb-10">
             <span className="text-blue-primary text-xs sm:text-sm font-semibold tracking-widest uppercase">
               What We Offer
             </span>
@@ -332,17 +345,26 @@ export default function Home() {
                 <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="h-full p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/30 transition-all duration-300 group cursor-pointer"
+                  className="h-full rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/30 transition-all duration-300 group cursor-pointer overflow-hidden"
                 >
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-blue-primary/20 to-blue-dark/20 flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:from-blue-primary/30 group-hover:to-blue-dark/30 transition-all">
-                    <service.icon className="text-sm sm:text-base md:text-xl text-blue-primary" />
+                  <div className="relative h-28 sm:h-32 md:h-40 w-full overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   </div>
-                  <h3 className="text-white font-bold text-xs sm:text-sm md:text-lg mb-1 sm:mb-2 group-hover:text-blue-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm leading-relaxed line-clamp-3 sm:line-clamp-none">
-                    {service.desc}
-                  </p>
+                  <div className="p-3 sm:p-4 md:p-5">
+                    <h3 className="text-white font-bold text-xs sm:text-sm md:text-lg mb-1 sm:mb-2 group-hover:text-blue-primary transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm leading-relaxed line-clamp-2 sm:line-clamp-3">
+                      {service.desc}
+                    </p>
+                  </div>
                 </motion.div>
               </AnimatedSection>
             ))}
@@ -360,10 +382,10 @@ export default function Home() {
       </section>
 
       {/* ===== 4. PRODUCTS PREVIEW ===== */}
-      <section className="py-12 sm:py-16 md:py-24 relative">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
+      <section className="py-8 sm:py-12 md:py-16 relative">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
+          <AnimatedSection className="text-center mb-6 sm:mb-8 md:mb-10">
             <span className="text-red-primary text-xs sm:text-sm font-semibold tracking-widest uppercase">
               What We Use
             </span>
@@ -381,12 +403,12 @@ export default function Home() {
               <AnimatedSection key={product.title} delay={i * 0.08}>
                 <motion.div
                   whileHover={{ y: -8 }}
-                  className="h-full p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/20 transition-all group"
+                  className={`h-full p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.06] ${product.hoverBorder} transition-all group`}
                 >
                   <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br ${product.color} flex items-center justify-center mb-3 sm:mb-4`}>
                     <product.icon className="text-base sm:text-xl text-white" />
                   </div>
-                  <h3 className="text-white font-bold text-sm sm:text-base md:text-lg mb-2 sm:mb-3 group-hover:text-blue-primary transition-colors">
+                  <h3 className={`text-white font-bold text-sm sm:text-base md:text-lg mb-2 sm:mb-3 ${product.hoverText} transition-colors`}>
                     {product.title}
                   </h3>
                   <ul className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
@@ -415,10 +437,10 @@ export default function Home() {
       </section>
 
       {/* ===== 5. BLOG PREVIEW ===== */}
-      <section className="py-12 sm:py-16 md:py-24 relative">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
+      <section className="py-8 sm:py-12 md:py-16 relative">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
+          <AnimatedSection className="text-center mb-6 sm:mb-8 md:mb-10">
             <span className="text-blue-primary text-xs sm:text-sm font-semibold tracking-widest uppercase">
               Latest Insights
             </span>
@@ -474,10 +496,10 @@ export default function Home() {
       </section>
 
       {/* ===== 6. WHY CHOOSE US ===== */}
-      <section className="py-12 sm:py-16 md:py-24 relative">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
+      <section className="py-8 sm:py-12 md:py-16 relative">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
+          <AnimatedSection className="text-center mb-6 sm:mb-8 md:mb-10">
             <span className="text-red-primary text-xs sm:text-sm font-semibold tracking-widest uppercase">
               Why Pure Care
             </span>
@@ -495,7 +517,7 @@ export default function Home() {
               <AnimatedSection key={item.title} delay={i * 0.1}>
                 <motion.div
                   whileHover={{ y: -10 }}
-                  className="text-center p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/30 transition-all duration-300"
+                  className="h-full text-center p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/30 transition-all duration-300 flex flex-col items-center min-h-[160px] sm:min-h-[200px] md:min-h-[250px]"
                 >
                   <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-blue-primary to-blue-dark flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6">
                     <item.icon className="text-base sm:text-lg md:text-2xl text-white" />
@@ -514,8 +536,8 @@ export default function Home() {
       </section>
 
       {/* ===== 7. CTA / CONTACT PREVIEW ===== */}
-      <section className="py-12 sm:py-16 md:py-24 relative">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
+      <section className="py-8 sm:py-12 md:py-16 relative">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden">

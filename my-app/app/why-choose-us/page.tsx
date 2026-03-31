@@ -23,14 +23,14 @@ import {
 import AnimatedSection from "@/components/AnimatedSection";
 
 const coreStrengths = [
-  { icon: FaStar, title: "Premium Quality", desc: "We use only the highest quality materials and products from globally trusted brands like 3M, XPEL, Gtechniq, and more. No compromises, ever.", color: "from-blue-primary to-blue-dark" },
-  { icon: FaUsers, title: "Expert Team", desc: "Our skilled technicians have years of hands-on experience in auto care. Each team member is trained in the latest techniques and technologies.", color: "from-purple-500 to-purple-700" },
-  { icon: FaShieldAlt, title: "Service Warranty", desc: "All our services come with comprehensive warranty coverage for your complete peace of mind. We stand behind every job we do.", color: "from-red-primary to-red-dark" },
-  { icon: FaTools, title: "Latest Technology", desc: "We invest in cutting-edge tools, equipment, and techniques to deliver flawless results that exceed industry standards.", color: "from-emerald-500 to-emerald-700" },
-  { icon: FaHeart, title: "Customer First", desc: "Your satisfaction is our top priority. We listen to your needs, provide honest recommendations, and ensure you're delighted with the results.", color: "from-pink-500 to-pink-700" },
-  { icon: FaClock, title: "Timely Delivery", desc: "We respect your time. All services are completed within the promised timeframe without compromising on quality or attention to detail.", color: "from-amber-500 to-amber-700" },
-  { icon: FaGem, title: "Competitive Pricing", desc: "Premium quality doesn't have to break the bank. We offer the best value for money with transparent pricing and no hidden charges.", color: "from-cyan-500 to-cyan-700" },
-  { icon: FaCertificate, title: "Certified Products", desc: "Every product we use is genuine, certified, and sourced directly from authorized distributors to ensure authenticity and performance.", color: "from-indigo-500 to-indigo-700" },
+  { icon: FaStar, title: "Premium Quality", desc: "We use only the highest quality materials and products from globally trusted brands like 3M, XPEL, Gtechniq, and more. No compromises, ever.", color: "from-blue-primary to-blue-dark", hoverBorder: "hover:border-blue-primary/40", hoverText: "group-hover:text-blue-primary" },
+  { icon: FaUsers, title: "Expert Team", desc: "Our skilled technicians have years of hands-on experience in auto care. Each team member is trained in the latest techniques and technologies.", color: "from-purple-500 to-purple-700", hoverBorder: "hover:border-purple-500/40", hoverText: "group-hover:text-purple-400" },
+  { icon: FaShieldAlt, title: "Service Warranty", desc: "All our services come with comprehensive warranty coverage for your complete peace of mind. We stand behind every job we do.", color: "from-red-primary to-red-dark", hoverBorder: "hover:border-red-primary/40", hoverText: "group-hover:text-red-primary" },
+  { icon: FaTools, title: "Latest Technology", desc: "We invest in cutting-edge tools, equipment, and techniques to deliver flawless results that exceed industry standards.", color: "from-emerald-500 to-emerald-700", hoverBorder: "hover:border-emerald-500/40", hoverText: "group-hover:text-emerald-400" },
+  { icon: FaHeart, title: "Customer First", desc: "Your satisfaction is our top priority. We listen to your needs, provide honest recommendations, and ensure you're delighted with the results.", color: "from-pink-500 to-pink-700", hoverBorder: "hover:border-pink-500/40", hoverText: "group-hover:text-pink-400" },
+  { icon: FaClock, title: "Timely Delivery", desc: "We respect your time. All services are completed within the promised timeframe without compromising on quality or attention to detail.", color: "from-amber-500 to-amber-700", hoverBorder: "hover:border-amber-500/40", hoverText: "group-hover:text-amber-400" },
+  { icon: FaGem, title: "Competitive Pricing", desc: "Premium quality doesn't have to break the bank. We offer the best value for money with transparent pricing and no hidden charges.", color: "from-cyan-500 to-cyan-700", hoverBorder: "hover:border-cyan-500/40", hoverText: "group-hover:text-cyan-400" },
+  { icon: FaCertificate, title: "Certified Products", desc: "Every product we use is genuine, certified, and sourced directly from authorized distributors to ensure authenticity and performance.", color: "from-indigo-500 to-indigo-700", hoverBorder: "hover:border-indigo-500/40", hoverText: "group-hover:text-indigo-400" },
 ];
 
 const achievements = [
@@ -81,7 +81,7 @@ export default function WhyChooseUsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-14 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(79,195,247,0.12),_transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(239,68,68,0.08),_transparent_50%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -106,9 +106,9 @@ export default function WhyChooseUsPage() {
       </section>
 
       {/* Core Strengths */}
-      <section className="py-12 sm:py-16 md:py-20">
+      <section className="py-8 sm:py-10 md:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
+          <AnimatedSection className="text-center mb-6 sm:mb-8 md:mb-10">
             <span className="text-blue-primary text-xs sm:text-sm font-semibold tracking-widest uppercase">Our Strengths</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mt-2 sm:mt-3 mb-3 sm:mb-4">
               What Makes Us <span className="gradient-text-blue">Different</span>
@@ -120,12 +120,12 @@ export default function WhyChooseUsPage() {
               <AnimatedSection key={item.title} delay={i * 0.08}>
                 <motion.div
                   whileHover={{ y: -8 }}
-                  className="h-full text-center p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-primary/30 transition-all"
+                  className={`h-full text-center p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.06] ${item.hoverBorder} transition-all group`}
                 >
                   <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-5`}>
                     <item.icon className="text-lg sm:text-xl text-white" />
                   </div>
-                  <h3 className="text-white font-bold text-sm sm:text-base md:text-lg mb-2 sm:mb-3">{item.title}</h3>
+                  <h3 className={`text-white font-bold text-sm sm:text-base md:text-lg mb-2 sm:mb-3 ${item.hoverText} transition-colors`}>{item.title}</h3>
                   <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               </AnimatedSection>
@@ -135,10 +135,10 @@ export default function WhyChooseUsPage() {
       </section>
 
       {/* Achievements / Stats */}
-      <section className="py-12 sm:py-16 md:py-20">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-20" />
+      <section className="py-8 sm:py-10 md:py-14">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
+          <AnimatedSection className="text-center mb-6 sm:mb-8 md:mb-10">
             <span className="text-red-primary text-xs sm:text-sm font-semibold tracking-widest uppercase">Our Numbers</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mt-2 sm:mt-3 mb-3 sm:mb-4">
               Achievements That <span className="gradient-text-red">Speak</span>
@@ -162,10 +162,10 @@ export default function WhyChooseUsPage() {
       </section>
 
       {/* Our Process */}
-      <section className="py-12 sm:py-16 md:py-20">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-20" />
+      <section className="py-8 sm:py-10 md:py-14">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
+          <AnimatedSection className="text-center mb-6 sm:mb-8 md:mb-10">
             <span className="text-blue-primary text-xs sm:text-sm font-semibold tracking-widest uppercase">How We Work</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mt-2 sm:mt-3 mb-3 sm:mb-4">
               Our <span className="gradient-text-blue">Process</span>
@@ -197,10 +197,10 @@ export default function WhyChooseUsPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-12 sm:py-16 md:py-20">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-20" />
+      <section className="py-8 sm:py-10 md:py-14">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
+          <AnimatedSection className="text-center mb-6 sm:mb-8 md:mb-10">
             <span className="text-red-primary text-xs sm:text-sm font-semibold tracking-widest uppercase">Testimonials</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mt-2 sm:mt-3 mb-3 sm:mb-4">
               What Our <span className="gradient-text">Customers Say</span>
@@ -234,14 +234,14 @@ export default function WhyChooseUsPage() {
       </section>
 
       {/* Promise */}
-      <section className="py-12 sm:py-16 md:py-20">
-        <div className="section-divider mb-12 sm:mb-16 md:mb-20" />
+      <section className="py-8 sm:py-10 md:py-14">
+        <div className="section-divider mb-8 sm:mb-10 md:mb-14" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center p-6 sm:p-10 md:p-12 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-blue-primary/10 to-red-primary/10 border border-white/[0.06]">
               <FaHandshake className="text-4xl sm:text-5xl text-blue-primary mx-auto mb-4 sm:mb-6" />
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3 sm:mb-4">
-                Our Promise to You
+                Our Promise to Customers
               </h2>
               <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed">
                 At Pure Care, we promise to treat every vehicle with the same care and attention
