@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaCar, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaInstagram, FaFacebookF, FaTiktok, FaYoutube, FaLinkedinIn } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaInstagram, FaFacebookF, FaTiktok, FaYoutube, FaLinkedinIn } from "react-icons/fa";
 
 const services = [
   "Car Tinting",
@@ -29,17 +30,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1 space-y-4">
-            <Link href="/" className="flex items-center gap-2 sm:gap-3">
-              <FaCar className="text-2xl sm:text-3xl text-blue-primary shrink-0" />
-              <div>
-                <span className="text-xl sm:text-2xl font-bold tracking-wider">
-                  <span className="text-white">PURE</span>{" "}
-                  <span className="text-red-primary">CARE</span>
-                </span>
-                <p className="text-[8px] sm:text-[9px] tracking-[0.15em] sm:tracking-[0.2em] text-white uppercase leading-none">
-                  Auto Accessories TR. L.L.C
-                </p>
-              </div>
+            <Link href="/">
+              <Image
+                src="/pure-care-logo-removebg-preview.png"
+                alt="Pure Care Auto Accessories"
+                width={300}
+                height={90}
+                className="h-24 sm:h-28 w-auto"
+              />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Premium car care and auto accessories services in Sharjah, UAE.

@@ -5,8 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
+import Image from "next/image";
 import {
-  FaCar,
   FaWhatsapp,
   FaInstagram,
   FaFacebookF,
@@ -22,6 +22,7 @@ const navLinks = [
   { href: "/products", label: "Products" },
   { href: "/blog", label: "Blog" },
   { href: "/why-choose-us", label: "Why Us" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -72,22 +73,20 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
+          <Link href="/" className="shrink-0">
             <motion.div
-              whileHover={{ rotate: 10, scale: 1.1 }}
+              whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <FaCar className="text-2xl sm:text-3xl text-blue-primary" />
+              <Image
+                src="/pure-care-logo-removebg-preview.png"
+                alt="Pure Care Auto Accessories"
+                width={320}
+                height={100}
+                className="h-24 sm:h-28 w-auto"
+                priority
+              />
             </motion.div>
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-2xl font-bold tracking-wider">
-                <span className="text-white">PURE</span>{" "}
-                <span className="text-red-primary">CARE</span>
-              </span>
-              <span className="text-[7px] sm:text-[9px] tracking-[0.15em] sm:tracking-[0.2em] text-white uppercase leading-none">
-                Auto Accessories TR. L.L.C
-              </span>
-            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -110,8 +109,15 @@ export default function Navbar() {
               );
             })}
 
+            <Link
+              href="/contact"
+              className="ml-2 lg:ml-3 px-4 lg:px-5 py-2 bg-gradient-to-r from-blue-primary to-blue-dark text-white text-xs lg:text-sm font-semibold rounded-full hover:shadow-lg hover:shadow-blue-primary/30 transition-all duration-300"
+            >
+              Get Quote
+            </Link>
+
             {/* Social Icons - Desktop */}
-            <div className="flex items-center gap-1 ml-2 lg:ml-4 pl-2 lg:pl-4 border-l border-white/10">
+            <div className="flex items-center gap-1 ml-2 lg:ml-3 pl-2 lg:pl-3 border-l border-white/10">
               {socialLinks.map(({ icon: Icon, href, label, color, size }) => (
                 <a
                   key={label}

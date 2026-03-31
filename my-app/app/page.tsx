@@ -299,14 +299,13 @@ export default function Home() {
                 <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-blue-primary/20 to-red-primary/20 blur-3xl" />
                 <div className="relative h-full rounded-2xl sm:rounded-3xl overflow-hidden gradient-border bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
                   <div className="text-center p-6 sm:p-8">
-                    <FaCar className="text-5xl sm:text-7xl md:text-8xl text-blue-primary/40 mx-auto mb-4 sm:mb-6" />
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                      <span className="text-white">PURE</span>{" "}
-                      <span className="text-red-primary">CARE</span>
-                    </h3>
-                    <p className="text-gray-400 text-[10px] sm:text-sm tracking-widest uppercase">
-                      Auto Accessories TR. L.L.C
-                    </p>
+                    <Image
+                      src="/pure-care-logo-removebg-preview.png"
+                      alt="Pure Care"
+                      width={250}
+                      height={120}
+                      className="w-40 sm:w-52 md:w-64 h-auto mx-auto mb-4 sm:mb-6"
+                    />
                     <div className="mt-4 sm:mt-6 space-y-1 sm:space-y-2">
                       <p className="text-blue-primary text-xs sm:text-sm">
                         <FaMapMarkerAlt className="inline mr-1 sm:mr-2" />
